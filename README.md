@@ -75,4 +75,4 @@ jobs:
 
 ## Credits
 
-This action is based on [custom_keys_git_ssh](https://gist.github.com/vhermecz/4e2ae9468f2ff7532bf3f8155ac95c74) gist by [vhermecz](https://gist.github.com/vhermecz).
+This action is based on [custom_keys_git_ssh](https://gist.github.com/vhermecz/4e2ae9468f2ff7532bf3f8155ac95c74) gist by [vhermecz](https://gist.github.com/vhermecz). There is only a small change to search the keys under `~/.ssh` folder instead of `~/.ssh/git-keys/ ` folder.
