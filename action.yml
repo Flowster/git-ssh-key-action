@@ -8,7 +8,9 @@ branding:
 runs:
   using: "composite"
   steps:
-    - run: chmod  +x ${{ github.action_path }}/custom_keys_git_ssh/custom_keys_git_ssh
+    - run: git submodule update --init --recursive
+      shell: bash
+    - run: chmod +x ${{ github.action_path }}/custom_keys_git_ssh/custom_keys_git_ssh
       shell: bash
     - run: git config --global core.sshCommand ${{ github.action_path }}/custom_keys_git_ssh/custom_keys_git_ssh
       shell: bash
