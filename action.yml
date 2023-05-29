@@ -1,0 +1,14 @@
+# https://help.github.com/en/articles/metadata-syntax-for-github-actions
+name: "Select SSH key per repository"
+description: "Define which SSH key should be used per repositories"
+author: "Flowster"
+branding:
+  icon: "share-2"
+  color: "gray-dark"
+runs:
+  using: "composite"
+  steps:
+    - run: chmod  +x ${{ github.action_path }}/custom_keys_git_ssh.sh
+      shell: bash
+    - run: git config --global core.sshCommand ${{ github.action_path }}/custom_keys_git_ssh.sh
+      shell: bash
