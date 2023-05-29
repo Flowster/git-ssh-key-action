@@ -12,7 +12,7 @@
 if [[ $# -eq 0 ]]; then
 	echo "Usage"
 	echo "Set script as GIT_SSH_COMMAND"
-	echo "Add SSH keys for git repositories under ~/.ssh/git-keys/ folder."
+	echo "Add SSH keys for git repositories under ~/.ssh folder."
 	echo "File name format:"
 	echo "  For the repository git@github.com:github/practice.git"
 	echo "  Put the private key into the file github-practice"
@@ -40,7 +40,7 @@ IDENTITY=
 if [[ $CMD_PATH == *.git ]] ;
 then
 	REPOKEY=$(echo "$CMD_PATH" | sed 's/\.git//g' | sed 's/\//-/g')
-	KEYFILE=$(echo ~/.ssh/git-keys/$REPOKEY)
+	KEYFILE=$(echo ~/.ssh/$REPOKEY)
 	if [[ -f "$KEYFILE" ]]
 	then
 		debuglog "Key '$KEYFILE' exists"
